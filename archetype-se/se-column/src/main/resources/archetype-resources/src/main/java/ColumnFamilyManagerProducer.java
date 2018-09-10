@@ -14,35 +14,37 @@
  */
 package $package;
 
-import org.jnosql.diana.api.key.BucketManager;
-import org.jnosql.diana.api.key.BucketManagerFactory;
-import org.jnosql.diana.api.key.KeyValueConfiguration;
+import org.jnosql.diana.api.column.ColumnConfiguration;
+import org.jnosql.diana.api.column.ColumnFamilyManager;
+import org.jnosql.diana.api.column.ColumnFamilyManagerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 
 @ApplicationScoped
-public class BucketManagerProducer {
+public class ColumnFamilyManagerProducer {
 
-    private static final String BUCKET = "developers";
 
-    private BucketManagerFactory<BucketManager> managerFactory;
+    private static final String COLUMN_FAMILY = "developers";
+
+
+    private ColumnFamilyManagerFactory<ColumnFamilyManager> managerFactory;
 
     @PostConstruct
     public void init() {
-        KeyValueConfiguration<?> configuration = getConfiguration();
+        ColumnConfiguration<?> configuration = getConfiguration();
         managerFactory = configuration.get();
+
     }
 
-    private KeyValueConfiguration<?> getConfiguration() {
+    @Produces
+    public ColumnFamilyManager getManagerCassandra() {
+        return managerFactory.get(COLUMN_FAMILY);
+    }
+
+    private ColumnConfiguration<?> getConfiguration() {
         throw new UnsupportedOperationException("Don't forget to add a driver as dependency and set its implementation here.");
     }
 
-
-    @Produces
-    public BucketManager getManager() {
-        return managerFactory.getBucketManager(BUCKET);
-
-    }
 }
