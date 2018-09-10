@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  Copyright (c) 2017 Otávio Santana and others
+  ~   All rights reserved. This program and the accompanying materials
+  ~   are made available under the terms of the Eclipse Public License v1.0
+  ~   and Apache License v2.0 which accompanies this distribution.
+  ~   The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+  ~   and the Apache License v2.0 is available at http://www.opensource.org/licenses/apache2.0.php.
+  ~
+  ~   You may elect to redistribute this code under either of these licenses.
+  ~
+  ~   Contributors:
+  ~
+  ~   Otavio Santana
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <parent>
+        <groupId>org.jnosql</groupId>
+        <artifactId>jnosql-parent</artifactId>
+        <version>0.0.7-SNAPSHOT</version>
+    </parent>
+
+
+    <groupId>org.jnosql.archetype</groupId>
+    <artifactId>archetype-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Eclipse JNoSQL Mapping layer, Artemis</description>
+    <url>http://jnosql.org/</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+        <license>
+            <name>The Eclipse Public License v1.0</name>
+            <url>http://www.eclipse.org/legal/epl-v10.html</url>
+        </license>
+    </licenses>
+
+
+    <scm>
+        <connection>scm:git:git://github.com/eclipse/jnosql-archetype.git</connection>
+        <developerConnection>scm:git:ssh://github.com:eclipse/jnosql-archetype.git</developerConnection>
+        <url>https://github.com/eclipse/jnosql-archetype</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>JNoSQL Developers</name>
+            <email>jnosql-dev@eclipse.org</email>
+            <organization>Eclipse JNoSQL</organization>
+            <organizationUrl>https://dev.eclipse.org/mailman/listinfo/jnosql-dev</organizationUrl>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sonar.jacoco.reportPath>../target/jacoco.exec</sonar.jacoco.reportPath>
+    </properties>
+
+    <modules>
+        <module>archetype-se</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>${junit.platform.surefire}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.maven.version}</version>
+                <executions>
+                    <execution>
+                        <id>pre-test</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                        <configuration>
+                            <destFile>${sonar.jacoco.reportPath}</destFile>
+                            <append>true</append>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${sonar.maven.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
