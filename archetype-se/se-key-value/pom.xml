@@ -56,11 +56,7 @@ under the License.
         <sonar.jacoco.reportPath>../target/jacoco.exec</sonar.jacoco.reportPath>
     </properties>
 
-    <modules>
-        <module>se-key-value</module>
-    </modules>
-
-      <distributionManagement>
+    <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
