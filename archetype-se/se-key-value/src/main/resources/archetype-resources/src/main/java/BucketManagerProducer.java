@@ -35,14 +35,13 @@ public class BucketManagerProducer {
         managerFactory = configuration.get();
     }
 
-    private KeyValueConfiguration<?> getConfiguration() {
-        throw new UnsupportedOperationException("Don't forget to add a driver as dependency and set its implementation here.");
-    }
-
-
     @Produces
     public BucketManager getManager() {
         return managerFactory.getBucketManager(BUCKET);
 
+    }
+
+    private KeyValueConfiguration<?> getConfiguration() {
+        throw new UnsupportedOperationException("Don't forget to add a driver as dependency and set its implementation here.");
     }
 }
