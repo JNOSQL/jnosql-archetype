@@ -5,7 +5,7 @@ This project contains quick start to Eclipse JNoSQL project using the Maven Arch
 
 ## Java SE
 
-The archetypes that run Eclipse JNoSQL using [CDI 2.0](https://jcp.org/en/jsr/detail?id=365), [JSON-B](https://jcp.org/en/jsr/detail?id=367) and [JSON-P](https://www.jcp.org/en/jsr/detail?id=374), where by default it uses the Reference implementation to each implementation, thereby Eclipse Yasson, Eclipse Glassfish JSON, and Weld respectively.
+The archetypes that run Eclipse JNoSQL using [CDI 2.0](https://jcp.org/en/jsr/detail?id=365), [JSON-B](https://jcp.org/en/jsr/detail?id=367) and [JSON-P](https://www.jcp.org/en/jsr/detail?id=374), where by default it uses the Reference implementation to each implementation, thereby [Eclipse Yasson](http://json-b.net/), [Eclipse Glassfish JSON](https://javaee.github.io/jsonp/), and [Weld](http://weld.cdi-spec.org/).
 
 
 ### KeyValue SE
