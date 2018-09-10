@@ -67,6 +67,7 @@
 
     <modules>
         <module>se-key-value</module>
+        <module>se-column</module>
     </modules>
 
       <distributionManagement>
