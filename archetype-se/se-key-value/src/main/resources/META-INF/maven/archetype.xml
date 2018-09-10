@@ -24,12 +24,12 @@
         <source>src/main/java/BucketManagerProducer.java</source>
     </sources>
     <resources>
-        <reresource>src/resources/META-INF/bean.xml</reresource>
+        <resources>src/resources/META-INF/bean.xml</resources>
     </resources>
     <testSources>
         <source>src/test/java/AppTest.java</source>
     </testSources>
     <testResources>
-        <reresource>src/resources/META-INF/bean.xml</reresource>
+        <resources>src/resources/META-INF/bean.xml</resources>
     </testResources>
 </archetype>
