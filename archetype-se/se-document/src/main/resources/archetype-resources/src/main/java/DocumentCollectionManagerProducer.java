@@ -23,7 +23,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 
 @ApplicationScoped
-public class ColumnFamilyManagerProducer {
+public class DocumentCollectionManagerProducer {
 
     private static final String COLLECTION = "developers";
 
