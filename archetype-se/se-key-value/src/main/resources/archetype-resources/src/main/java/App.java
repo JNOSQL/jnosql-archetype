@@ -14,14 +14,16 @@
  */
 package $package;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+import org.jnosql.artemis.key.KeyValueTemplate;
+
+import javax.enterprise.inject.se.SeContainer;
+import javax.enterprise.inject.se.SeContainerInitializer;
+
+public class App {
+
+    public static void main(String[] args) {
+        try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
+            KeyValueTemplate template = container.select(KeyValueTemplate.class).get();
+        }
     }
 }
