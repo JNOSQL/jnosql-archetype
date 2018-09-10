@@ -14,7 +14,7 @@
  */
 package $package;
 
-import org.jnosql.artemis.column.ColumnTemplate;
+import org.jnosql.artemis.document.DocumentTemplate;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
@@ -23,7 +23,7 @@ public class App {
 
     public static void main(String[] args) {
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
-            ColumnTemplate template = container.select(ColumnTemplate.class).get();
+            DocumentTemplate template = container.select(DocumentTemplate.class).get();
         }
     }
 }

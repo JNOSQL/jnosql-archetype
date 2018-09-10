@@ -14,9 +14,9 @@
  */
 package $package;
 
-import org.jnosql.diana.api.column.ColumnConfiguration;
-import org.jnosql.diana.api.column.ColumnFamilyManager;
-import org.jnosql.diana.api.column.ColumnFamilyManagerFactory;
+import org.jnosql.diana.api.document.DocumentCollectionManager;
+import org.jnosql.diana.api.document.DocumentCollectionManagerFactory;
+import org.jnosql.diana.api.document.DocumentConfiguration;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
@@ -25,25 +25,23 @@ import javax.enterprise.inject.Produces;
 @ApplicationScoped
 public class ColumnFamilyManagerProducer {
 
+    private static final String COLLECTION = "developers";
 
-    private static final String COLUMN_FAMILY = "developers";
-
-
-    private ColumnFamilyManagerFactory<ColumnFamilyManager> managerFactory;
+    private DocumentCollectionManagerFactory<DocumentCollectionManager> managerFactory;
 
     @PostConstruct
     public void init() {
-        ColumnConfiguration<?> configuration = getConfiguration();
+        DocumentConfiguration<?> configuration = getConfiguration();
         managerFactory = configuration.get();
-
     }
 
     @Produces
-    public ColumnFamilyManager getManagerCassandra() {
-        return managerFactory.get(COLUMN_FAMILY);
+    public DocumentCollectionManager getManager() {
+        return managerFactory.get(COLLECTION);
+
     }
 
-    private ColumnConfiguration<?> getConfiguration() {
+    private DocumentConfiguration<DocumentCollectionManagerFactory> getConfiguration() {
         throw new UnsupportedOperationException("Don't forget to add a driver as dependency and set its implementation here.");
     }
 
