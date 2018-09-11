@@ -21,9 +21,9 @@
     <groupId>${groupId}</groupId>
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
+    <name>${artifactId}</name>
     <packaging>war</packaging>
 
-    <name>${artifactId}</name>
     <url>http://www.jnosql.org/</url>
 
     <properties>
