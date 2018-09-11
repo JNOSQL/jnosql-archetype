@@ -34,9 +34,11 @@
         <javax.json.version>1.1.2</javax.json.version>
         <jnosql.version>0.0.6</jnosql.version>
         <yasson.version>1.0.1</yasson.version>
+        <tinkerpop.version>3.3.0</tinkerpop.version>
         <maven.compile.version>3.8.0</maven.compile.version>
         <junit.version>5.0.3</junit.version>
-        <tinkerpop.version>3.3.0</tinkerpop.version>
+        <junit.platform.surefire>1.0.3</junit.platform.surefire>
+        <maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
     </properties>
 
     <dependencies>
@@ -97,6 +99,18 @@
                     <target>${maven.compiler.target}</target>
                     <source>${maven.compiler.source}</source>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>${junit.platform.surefire}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
