@@ -68,6 +68,7 @@
 
     <modules>
         <module>archetype-se</module>
+	<module>archetype-web</module>
     </modules>
 
     <dependencies>
