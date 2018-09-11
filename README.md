@@ -23,3 +23,25 @@ The archetypes that run Eclipse JNoSQL using [CDI 2.0](https://jcp.org/en/jsr/de
 ### Graph SE
 
 `mvn archetype:generate -DarchetypeGroupId=org.jnosql.archetype   -DarchetypeArtifactId=se-graph  -DarchetypeVersion=0.0.1  -DgroupId=<groupId>  -DartifactId=<artifactId> -Dversion=<version> -DinteractiveMode=false`
+
+
+## Java Web
+
+The archetypes that run Eclipse JNoSQL using Java EE, Jakarta EE as [API provided](https://mvnrepository.com/artifact/javax/javaee-api/8.0).
+
+
+### KeyValue Web
+
+`mvn archetype:generate -DarchetypeGroupId=org.jnosql.archetype   -DarchetypeArtifactId=web-key-value  -DarchetypeVersion=0.0.1  -DgroupId=<groupId>  -DartifactId=<artifactId> -Dversion=<version> -DinteractiveMode=false`
+
+### Column Family Web
+
+`mvn archetype:generate -DarchetypeGroupId=org.jnosql.archetype   -DarchetypeArtifactId=web-column  -DarchetypeVersion=0.0.1  -DgroupId=<groupId>  -DartifactId=<artifactId> -Dversion=<version> -DinteractiveMode=false`
+
+### Document Web
+
+`mvn archetype:generate -DarchetypeGroupId=org.jnosql.archetype   -DarchetypeArtifactId=web-document  -DarchetypeVersion=0.0.1  -DgroupId=<groupId>  -DartifactId=<artifactId> -Dversion=<version> -DinteractiveMode=false`
+
+### Graph Web
+
+`mvn archetype:generate -DarchetypeGroupId=org.jnosql.archetype   -DarchetypeArtifactId=web-graph  -DarchetypeVersion=0.0.1  -DgroupId=<groupId>  -DartifactId=<artifactId> -Dversion=<version> -DinteractiveMode=false`
