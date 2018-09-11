@@ -19,10 +19,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-
-    <groupId>org.jnosql.archetype</groupId>
+    <parent>
+        <groupId>org.jnosql.archetype</groupId>
+        <artifactId>archetype-se</artifactId>
+        <version>0.0.7-SNAPSHOT</version>
+    </parent>
     <artifactId>se-column</artifactId>
-    <version>0.0.1</version>
     <packaging>jar</packaging>
     <name>Eclipse JNoSQL Quickstart to Column in Java SE</name>
     <description>An archetype to Eclipse JNoSQL Quickstart to Column database in Java Standard Edition.</description>

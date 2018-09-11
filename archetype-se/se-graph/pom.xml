@@ -20,9 +20,13 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>org.jnosql.archetype</groupId>
+    <parent>
+        <groupId>org.jnosql.archetype</groupId>
+        <artifactId>archetype-se</artifactId>
+        <version>0.0.7-SNAPSHOT</version>
+    </parent>
+
     <artifactId>se-graph</artifactId>
-    <version>0.0.1</version>
     <packaging>jar</packaging>
     <name>Eclipse JNoSQL Quickstart to Graph in Java SE</name>
     <description>An archetype to Eclipse JNoSQL Quickstart to Graph database in Java Standard Edition.</description>

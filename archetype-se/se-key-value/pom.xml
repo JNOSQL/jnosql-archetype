@@ -20,9 +20,12 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>org.jnosql.archetype</groupId>
+    <parent>
+        <groupId>org.jnosql.archetype</groupId>
+        <artifactId>archetype-se</artifactId>
+        <version>0.0.7-SNAPSHOT</version>
+    </parent>
     <artifactId>se-key-value</artifactId>
-    <version>0.0.1</version>
     <packaging>jar</packaging>
     <name>Eclipse JNoSQL Quickstart to Key-value in Java SE</name>
     <description>An archetype to Eclipse JNoSQL Quickstart to Key-value database in Java Standard Edition.</description>
