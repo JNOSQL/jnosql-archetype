@@ -21,48 +21,26 @@
     <groupId>${groupId}</groupId>
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
-
     <name>${artifactId}</name>
+    <packaging>war</packaging>
     <url>http://www.jnosql.org/</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <weld.se.core.version>3.0.5.Final</weld.se.core.version>
-        <javax.json.bind.version>1.0</javax.json.bind.version>
-        <javax.json.version>1.1.2</javax.json.version>
         <jnosql.version>0.0.6</jnosql.version>
-        <yasson.version>1.0.1</yasson.version>
+        <jakarta.ee.version>8.0</jakarta.ee.version>
         <maven.compile.version>3.8.0</maven.compile.version>
         <junit.version>5.0.3</junit.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.jboss.weld.se</groupId>
-            <artifactId>weld-se-shaded</artifactId>
-            <version>${weld.se.core.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.json</groupId>
-            <artifactId>javax.json-api</artifactId>
-            <version>${javax.json.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.json.bind</groupId>
-            <artifactId>javax.json.bind-api</artifactId>
-            <version>${javax.json.bind.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse</groupId>
-            <artifactId>yasson</artifactId>
-            <version>${yasson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish</groupId>
-            <artifactId>javax.json</artifactId>
-            <version>${javax.json.version}</version>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${jakarta.ee.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jnosql.artemis</groupId>
