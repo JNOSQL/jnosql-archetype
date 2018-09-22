@@ -39,7 +39,7 @@ public class ColumnFamilyManagerProducer {
     }
 
     @Produces
-    public ColumnFamilyManager getManagerCassandra() {
+    public ColumnFamilyManager getCassandra() {
         return managerFactory.get(COLUMN_FAMILY);
     }
 
